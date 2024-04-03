@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
 .navbar{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    border: 1px solid black;
+    margin: 1rem 0;
 }
 .title{
     color: #CF2D2D;
@@ -15,10 +18,6 @@
     padding: 0.5rem 0.75rem;
     border-radius: 0.3rem;
     border: none;
-}
-.categories-btn img{
-    width: 70px;
-    height: 40px;
 }
 .searchbar{
     width: 30%;
@@ -31,4 +30,43 @@
     border: 1px solid lightgray;
     border-radius: 0.35rem;
     background-color: white;
+}
+.events{
+    display: flex;
+    margin: 1rem 4rem;
+
+}
+.events p{
+    flex-grow: 0.4;
+}
+.event-types{
+    display: flex; 
+    gap: 3rem;
+}
+.event-types li{list-style-type: none;}
+.about-us{
+    position: relative;
+    overflow-x: hidden;
+}
+.banner-text{
+    position: absolute; 
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 80%;
+}
+.banner-text h1{
+    font-size: 3.5rem;
+    line-height: 6rem;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.banner-text p{
+    padding: 1rem;
+    font-family: "Inter", sans-serif;
+    text-align: center;
 }
