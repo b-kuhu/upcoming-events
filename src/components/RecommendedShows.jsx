@@ -3,7 +3,9 @@ import {showsURL} from '../utils/Constants';
 import EventCard from "./EventCard";
 
 const RecommendedShows = () => {
-    const [data,setData] = useState([]);
+    const [data,setData] = useState([]);    
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         fetchData()
@@ -14,13 +16,35 @@ const RecommendedShows = () => {
         setData(jsonData.events);
     }
 
+    const interval = 2000
+
+    useEffect(() => {
+        let sliderInterval;
+        if (isHovered) {
+          sliderInterval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+          }, interval);
+        }
+        return () => clearInterval(sliderInterval);
+      }, [currentIndex, interval, isHovered, data.length]);
+      
+      const handleHover = () => {
+        setIsHovered(true);
+      };
     
-    return <div className="show-container">
+      const handleLeave = () => {
+        setIsHovered(false);
+      };
+    
+    return <>
+    <div className="show-container" onMouseEnter={handleHover} onMouseLeave={handleLeave}>
         <h2>Recommended Events &#x2192;</h2>
-        <div className="wrapper">
+        <div className="wrapper" style={{ transform: `translateX(-${currentIndex * 7}%)` }}>
         {data.map((show,index) => <EventCard key={index} event={show}/>)}
         </div>
     </div>
+    </>
 }
+export default RecommendedShows
 
-export default RecommendedShows;
+
