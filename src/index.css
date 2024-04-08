@@ -5,26 +5,45 @@
 }
 .navbar{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    margin: 1rem 0;
+    gap: 10rem;
+    margin: 1rem 4rem;
 }
 .title{
     color: #CF2D2D;
+}
+.nav-items{
+    display: flex;
+    gap: 2rem;
 }
 .categories-btn{
     background-color: black;
     color: white;
     padding: 0.5rem 0.75rem;
     border-radius: 0.3rem;
-    border: none;
+    border: none;   
 }
-.searchbar{
-    width: 30%;
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.categories-icon{height: 25px; width: 15px;}
+.search{ position: relative;}
+.search-bar{
+    width: 500px;
     padding: 0.5rem;
     border: 1px solid lightgray;
     border-radius: 0.35rem;
 }
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: gray;
+    cursor: pointer;
+  }
 .sign-in-btn{
     padding: 0.5rem 0.75rem;
     border: 1px solid lightgray;
@@ -34,9 +53,8 @@
 .events{
     display: flex;
     margin: 1rem 4rem;
-
 }
-.events p{
+.events .location{
     flex-grow: 0.4;
 }
 .event-types{
@@ -69,4 +87,43 @@
     padding: 1rem;
     font-family: "Inter", sans-serif;
     text-align: center;
+}
+.show-container{
+    position: absolute;
+    top: 70%;
+    transform: translate(10%,50%);
+    color: white;
+    overflow-x: hidden;
+}
+.wrapper{
+    display: flex;
+    gap: 0.5rem;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+.event-data{
+    position: relative;
+    color: white;
+}
+.event-image{
+    background-size:cover; /* Image ko container ke size ke according crop karna */
+    height: 350px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+.event-details{
+    position: absolute;
+    top: 40%;
+    transform: translate(15%,100%);
+    padding: 0.5rem;
+}
+.upcoming_events{
+    margin-top: 7rem;
+}
+.events_container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 1rem;
+    place-items: center;
 }
