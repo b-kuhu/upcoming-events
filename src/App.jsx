@@ -1,5 +1,7 @@
 import AboutUs from "./components/AboutUs"
 import Header from "./components/Header"
+import RecommendedShows from "./components/RecommendedShows"
+import UpcomingEvents from "./components/UpcommingEvents"
 
 const App = () => {
 
@@ -7,6 +9,8 @@ const App = () => {
     <>
       <Header/>
       <AboutUs/>
+      <RecommendedShows/>
+      <UpcomingEvents/>
     </>
   )
 }
