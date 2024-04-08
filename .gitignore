@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 public
 dist-ssr
+utils
 *.local
 vite.config.js
 .eslintrc.cjs
