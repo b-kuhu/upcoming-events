@@ -20,7 +20,6 @@ const UpcomingEvents = () =>{
 
     console.log("pages : ",page,"page size : ",pageSize)
     const handleScroll = async() => {
-        
             // document.documentElement.scrollHeight // full height of our web page
             // window.innerHeight // browser window's viewport height 
             // scrolled height: ",document.documentElement.scrollTop//no of pixels that the document has been scrolled vertically
