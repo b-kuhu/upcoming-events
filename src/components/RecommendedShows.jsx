@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import {showsURL} from '../utils/Constants'; 
-import EventCard from "./EventCard";
-
+import ShowCard from './ShowCard';
 const RecommendedShows = () => {
     const [data,setData] = useState([]);    
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,7 +39,7 @@ const RecommendedShows = () => {
     <div className="show-container" onMouseEnter={handleHover} onMouseLeave={handleLeave}>
         <h2>Recommended Events &#x2192;</h2>
         <div className="wrapper" style={{ transform: `translateX(-${currentIndex * 7}%)` }}>
-        {data.map((show,index) => <EventCard key={index} event={show}/>)}
+        {data.map((show,index) => <ShowCard key={index} show={show}/>)}
         </div>
     </div>
     </>
