@@ -19,7 +19,7 @@ const EventCard = ({event}) =>{
         <p className="event-name"><b>{event.eventName}</b></p>
        <div className="event-details">
            <p className="event-location"><FaLocationDot/>{event.cityName}</p>
-           <p className="event-weather-and-distance">{weather+', '+temperature}|{event.distanceKm.slice(0,2)}km</p>
+           <p className="event-weather-and-distance">{weather+', '+temperature} | {event.distanceKm.slice(0,2)}km</p>
        </div>
     </div>
 } 

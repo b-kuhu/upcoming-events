@@ -13,7 +13,7 @@ const Header = () => {
         <div className="nav-items">
         <button className='categories-btn icons'>
           <GiHamburgerMenu className='categories-icon'/>
-          Categories
+          <p>Categories</p>
         </button>
         <div className="search icons">
           <input className='search-bar'type="text" placeholder='DJI Phantom'/>
@@ -21,7 +21,7 @@ const Header = () => {
         </div>
         <div className="favourites icons">
           <FaHeart />
-          Favourites
+          <p>Favourites</p>
         </div>
         <button className='sign-in-btn'>Sign in </button>
         </div>

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
+    overflow-x: hidden;
 }
 .navbar{
     display: flex;
@@ -175,6 +176,7 @@
     width: 380px;
     position: relative;
     cursor: pointer;
+    padding: 0.3rem;
 }
 .event-image{
     width: 100%;
@@ -189,7 +191,7 @@
     color: white;
     background-color: black;
     opacity: 0.6;
-    width: 82%;
+    width: 80%;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
@@ -207,4 +209,25 @@
     display: flex;
     align-items: center;
     gap: 0.3rem;
+}
+
+@media(max-width:900px) {
+    .events{
+        flex-direction: column;
+        row-gap: 0.5rem;
+        transition: transform 0.5s ease;
+        margin: 0 1.5rem;
+    }
+    .event-types{
+        transform: translateX(-12%);
+        gap: 0.5rem;
+    }
+    
+    .favourites p{
+        display: none;
+    }
+    .events_container{
+        display: flex;
+        flex-direction: column;
+    }
 }
