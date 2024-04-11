@@ -4,6 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoMdPerson } from "react-icons/io";
 
 const Header = () => {
   return (  
@@ -20,17 +21,21 @@ const Header = () => {
           <CiSearch className='search-icon'/>
         </div>
         <div className="favourites icons">
-          <FaHeart />
+          <FaHeart className='favourites-icon' />
           <p>Favourites</p>
         </div>
-        <button className='sign-in-btn'>Sign in </button>
+        <button className='sign-in-btn'>
+          <p className='sign-in'>Sign in</p>
+          <IoMdPerson className='profile-icon'/>
+        </button>
+        
         </div>
         </div>
       <div className="events">
         <div className="location icons">
-          <FaLocationDot />
+          <FaLocationDot className='location-icon'/>
           Mumbai,India
-          <MdKeyboardArrowRight />
+          <MdKeyboardArrowRight className='arrow-icon'/>
         </div>
         <ul className="event-types">
           <li>Live Shows</li>
@@ -42,7 +47,6 @@ const Header = () => {
           <li>Activities</li>
         </ul>  
       </div>  
-  {/* <img src={BannerImg} alt='banner image'/> */}
     </div>
 )}
 export default Header;

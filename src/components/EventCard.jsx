@@ -14,7 +14,7 @@ const EventCard = ({event}) =>{
     const formattedDate = monthNames[date.getMonth()] + " " + date.getDate() + ", " +  date.getFullYear()
     
     return <div className="event-data">
-       <img className='event-image'src={url+id} alt="image"/>
+       <img className='event-image'src={url+id} alt={event.eventName+' Image'}/>
        <p className="event-date">{formattedDate}</p>
         <p className="event-name"><b>{event.eventName}</b></p>
        <div className="event-details">
