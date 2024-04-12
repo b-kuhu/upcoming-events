@@ -6,7 +6,7 @@ const AboutUs = () => {
             <img className='banner-image' src={BannerImg} alt="banner-image" />
             <div className="banner-text">
                 <h1>Discover Exciting Events Happening Near You - Stay Tuned For Updates</h1>
-                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis veniam .</p>
+                <p>Stay updated on thrilling local events with our website, ensuring you never miss out on exciting experiences nearby.</p>
             </div>
         </div>
     )
