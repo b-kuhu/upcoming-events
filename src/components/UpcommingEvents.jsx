@@ -8,8 +8,14 @@ const UpcomingEvents = () => {
   const [pageSize, setPageSize] = useState(1);
   const [loading, setLoading] = useState(true);
   const fetchData = async () => {
-    const res = await fetch(eventURL + `page=${page}&type=upcoming`);
-    console.log("current page : ", page);
+    let res;
+        if(process.env.NODE_ENV === 'development'){
+          res = await fetch(eventURL+ `page=${page}&type=upcoming`);
+        }
+        else{
+          res = await fetch(process.env.REACT_APP_eventURL+ `page=${page}&type=upcoming`);
+        }
+    // console.log("current page : ", page);
     const jsonData = await res.json();
     setEvents((prev) => [...prev, ...jsonData.events]);
     setLoading(false);
@@ -19,7 +25,7 @@ const UpcomingEvents = () => {
     fetchData();
   }, [page]);
 
-  console.log("pages : ", page, "page size : ", pageSize);
+  // console.log("pages : ", page, "page size : ", pageSize);
   const handleScroll = async () => {
     // document.documentElement.scrollHeight // full height of our web page
     // window.innerHeight // browser window's viewport height
