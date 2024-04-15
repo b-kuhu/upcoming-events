@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { eventURL } from "../utils/Constants";
 import EventCard from "./EventCard";
 import spinner from "../assets/Spinner.svg";
 const UpcomingEvents = () => {
@@ -8,13 +7,7 @@ const UpcomingEvents = () => {
   const [pageSize, setPageSize] = useState(1);
   const [loading, setLoading] = useState(true);
   const fetchData = async () => {
-    let res;
-        if(process.env.NODE_ENV === 'development'){
-          res = await fetch(eventURL+ `page=${page}&type=upcoming`);
-        }
-        else{
-          res = await fetch(process.env.REACT_APP_eventURL+ `page=${page}&type=upcoming`);
-        }
+    const  res = await fetch(process.env.REACT_APP_eventURL+ `page=${page}&type=upcoming`);
     // console.log("current page : ", page);
     const jsonData = await res.json();
     setEvents((prev) => [...prev, ...jsonData.events]);

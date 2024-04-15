@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import {showsURL} from '../utils/Constants';
 import ShowCard from './ShowCard';
 const RecommendedShows = () => {
     const [data,setData] = useState([]);    
@@ -10,13 +9,7 @@ const RecommendedShows = () => {
         fetchData()
     },[])
     const fetchData = async() =>{
-        let res;
-        if(process.env.NODE_ENV === 'development'){
-          res = await fetch(showsURL);
-        }
-        else{
-          res = await fetch(process.env.REACT_APP_showsURL);
-        }
+        const res = await fetch(process.env.REACT_APP_showsURL);
         const jsonData = await res.json()
         setData(jsonData.events);
     }
