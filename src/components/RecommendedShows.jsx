@@ -9,7 +9,7 @@ const RecommendedShows = () => {
         fetchData()
     },[])
     const fetchData = async() =>{
-        const res = await fetch(process.env.REACT_APP_showsURL);
+        const res = await fetch(import.meta.env.VITE_APP_showsURL);
         const jsonData = await res.json()
         setData(jsonData.events);
     }

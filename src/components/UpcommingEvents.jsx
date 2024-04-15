@@ -7,7 +7,7 @@ const UpcomingEvents = () => {
   const [pageSize, setPageSize] = useState(1);
   const [loading, setLoading] = useState(true);
   const fetchData = async () => {
-    const  res = await fetch(process.env.REACT_APP_eventURL+ `page=${page}&type=upcoming`);
+    const  res = await fetch(import.meta.env.VITE_APP_eventURL+ `page=${page}&type=upcoming`);
     // console.log("current page : ", page);
     const jsonData = await res.json();
     setEvents((prev) => [...prev, ...jsonData.events]);
